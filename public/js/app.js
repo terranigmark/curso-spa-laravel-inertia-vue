@@ -3403,7 +3403,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     submit: function submit() {
-      this.$inertia.put(this.route('notes.update', this.note.id), this.form);
+      this.$inertia.post(this.route('notes.store'), this.form);
     }
   }
 });

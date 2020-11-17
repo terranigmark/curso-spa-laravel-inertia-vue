@@ -62,7 +62,7 @@
         },
         methods: {
             submit() {
-                this.$inertia.put(this.route('notes.update', this.note.id), this.form)
+                this.$inertia.post(this.route('notes.store'), this.form)
             }
         }
     }
