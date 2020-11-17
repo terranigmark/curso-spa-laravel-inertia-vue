@@ -17,7 +17,7 @@
                     </div>
                     <div class="md:col-span-2 mt-5 md:mt-0">
                         <div class="shadow bg-white md:rounded-md p-4">
-                            <form>
+                            <form @submit.prevent="submit">
                                 <label class="block font-medium text-sm text-gray-700">
                                     Resumen
                                 </label>
@@ -61,6 +61,11 @@
                     excerpt: this.note.excerpt,
                     content: this.note.content,
                 }
+            }
+        },
+        methods: {
+            submit() {
+                this.$inertia.put(this.route('notes.update', this.note.id), this.form)
             }
         }
     }
