@@ -3467,6 +3467,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3486,6 +3492,11 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     submit: function submit() {
       this.$inertia.put(this.route('notes.update', this.note.id), this.form);
+    },
+    destroy: function destroy() {
+      if (confirm('¿Desea Eliminar?')) {
+        this.$inertia["delete"](this.route('notes.destroy', this.note.id));
+      }
     }
   }
 });
@@ -47691,6 +47702,26 @@ var render = function() {
                           "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
                       },
                       [_vm._v("Editar")]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("hr", { staticClass: "my-6" }),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.destroy($event)
+                      }
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                            Eliminar Nota\n                        "
                     )
                   ]
                 )
